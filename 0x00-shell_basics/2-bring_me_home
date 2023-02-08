@@ -1,0 +1,7 @@
+#!/bin/bash
+
+home=`printenv HOME`
+
+cd $home
+
+exec bash

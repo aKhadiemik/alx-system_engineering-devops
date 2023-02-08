@@ -1,4 +1,4 @@
 #!/bin/bash
-home=`printenv HOME`
+home=$(printenv HOME)
 cd $home
 exec bash

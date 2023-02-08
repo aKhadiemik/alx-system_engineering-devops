@@ -1,3 +1,2 @@
 #!/bin/bash
-cd ..
-exec bash
+exec bash $(cd ..)

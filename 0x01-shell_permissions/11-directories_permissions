@@ -1,2 +1,2 @@
 #!/bin/bash
-find ./ -type d -exec chmod 0711 {} \
+chmod a+X ./*

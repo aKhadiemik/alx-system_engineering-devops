@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+#Deletes scripts pid when SIGQUIT or SIGTERM received
+pid_file="/var/run/myscript.pid"
+
+echo $$ > "$pid_file"
+
+terminate() {
+  echo "I hate the kill command"
+  rm "$pid_file"
+  exit 0
+}
+
+interrupt() {
+  echo "Y U no love me?!"
+}
+
+quit() {
+  echo "Received SIGQUIT signal. Cleaning up..."
+  rm "$pid_file"
+  exit 0
+}
+
+trap terminate SIGTERM
+trap interrupt SIGINT
+trap quit SIGQUIT
+
+while true; do
+  echo "To infinity and beyond"
+  sleep 1
+done
+

@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#Script displays contents of current directory
+
+for file in *; do
+	name="$(echo "$file" | cut -d '-' -f 2-)"
+	echo "$name"
+done

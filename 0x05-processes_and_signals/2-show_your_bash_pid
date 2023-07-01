@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+#Displays lines from output of ps that contain bash
+# shellcheck disable=SC2009
+ps_output=$(ps -ef --forest)
+bash_lines=$(echo "$ps_output" | grep -i bash)
+echo "$bash_lines"

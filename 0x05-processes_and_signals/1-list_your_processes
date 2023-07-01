@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Get the process information using the ps command
+echo -e "$(ps -ef --forest)"

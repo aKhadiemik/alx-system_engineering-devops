@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#Gets the process information using the pgrep, displays process name containing bash 
+pgrep bash -l

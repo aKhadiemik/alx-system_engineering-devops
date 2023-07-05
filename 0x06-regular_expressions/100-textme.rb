@@ -1,2 +1,5 @@
 #!/usr/bin/env ruby
-puts ARGV[0].scan(/\[from:(.*?)\] \[to:(.*?)\] \[flags:(.*?)\]/).join(",")
+results = log_line.scan(/\[from:(.*?)\].*?\[to:(.*?)\].*?\[flags:(.*?)\]/)
+results.each do |sender, receiver, flags|
+  puts "#{sender},#{receiver},#{flags}"
+  end

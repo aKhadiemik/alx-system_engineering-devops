@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#Displays specific strings from /etc/passwd
+while read -r line; do
+    echo "$line" | cut -d ':' -f 1,3,6
+done</etc/passwd

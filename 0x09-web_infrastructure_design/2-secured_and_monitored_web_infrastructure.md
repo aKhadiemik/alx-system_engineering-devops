@@ -14,6 +14,6 @@ Load balanced web stack with security, telemetry, and encryption.
 
 ## Issues With This Infrastructure
 
-+ Terminating SSL at the load balancer level would leave the traffic between the load balancer and the web servers unencrypted.
-+ Having one MySQL server is an issue because it is not scalable and can act as a single point of failure for the web infrastructure.
-+ Having servers with all the same components would make the components contend for resources on the server like CPU, Memory, I/O, etc., which can lead to poor performance and also make it difficult to locate the source of the problem. A setup such as this is not easily scalable. 
++ A single database server still leaves the site open to failure and therefore act as a single point of failure.
+
++ Servers sharing the same components means there would be contention for resources (CPU, Memory, disk I/O) on the server. This means there is a great possiblity for degraded performance. Finding the root cause of this problem would also be difficult.

@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# Web server configured so that /redirect_me page redirects to
+# another page with status "301 Moved Permanently"
+
+sudo apt-get update -y -qq
+sudo apt-get install -y nginx
+
+sudo service nginx start
+sudo ufw allow 'Nginx HTTP'
+
+sudo chown -R "$USER:$USER" /var/www/html
+sudo chmod -R 755 /var/www
+
+mkdir /etc/nginx/html
+touch /etc/nginx/html/index.html
+echo "Hello Word!" > /etc/nginx/html/index.html
+
+sudo sed -i '24i\       rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-available/default
+
+service nginx restart

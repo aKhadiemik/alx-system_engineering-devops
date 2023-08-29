@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Script installs nginx on server, sets firewall rule to allow web server
+# be accessed on default port
+# specified string to be displayed upon where client accesses Nginx index page 
+
+sudo apt-get -y update
+sudo pt-get -y install nginx
+sudo ufw allow 'Nginx HTTP'
+echo 'Hello World!' > /var/www/html/index.html
+sudo service nginx start

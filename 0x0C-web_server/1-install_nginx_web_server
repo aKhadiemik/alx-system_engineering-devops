@@ -3,8 +3,10 @@
 # be accessed on default port
 # specified string to be displayed upon where client accesses Nginx index page 
 
-sudo apt-get -y update
-sudo pt-get -y install nginx
+sudo apt-get update -y -qq
+sudo apt-get install nginx -y
 sudo ufw allow 'Nginx HTTP'
+sudo chown -R "$USER":"$USER" /var/www/html
+sudo chmod -R 755 /var/www
 echo 'Hello World!' > /var/www/html/index.html
 sudo service nginx start

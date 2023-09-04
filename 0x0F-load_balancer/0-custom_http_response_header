@@ -6,9 +6,10 @@ new_string2="server {\n\tadd_header X-Served-By $var;"
 
 sudo apt-get update -y
 sudo apt-get install nginx -y
-sudo echo "Hello World!" > /usr/share/nginx/html/index.html
+sudo su
+echo "Hello World!" > /usr/share/nginx/html/index.html
 sudo mkdir -p /var/www/html
-sudo echo "Ceci n'est pas une page" > /var/www/html/custom_404.html
+echo "Ceci n'est pas une page" > /var/www/html/custom_404.html
 sudo sed -i -E "s/^[^#]+location \/ \{/$new_string/" /etc/nginx/sites-available/default
 sudo sed -i -E "s/^server \{/$new_string2/" /etc/nginx/sites-available/default
 sudo service nginx start

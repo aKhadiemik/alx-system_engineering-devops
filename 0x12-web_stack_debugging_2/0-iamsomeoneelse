@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Runs whoami against user passed as argument
+su "$1" -s /bin/bash -c 'whoami'

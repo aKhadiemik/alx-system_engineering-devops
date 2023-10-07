@@ -1,1 +1,1 @@
-Shell Basics
+Basics Shell + Automation Recipes 

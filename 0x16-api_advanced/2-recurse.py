@@ -18,7 +18,7 @@ def recurse(subreddit, hot_list=[]):
     if results.status_code == 200:
         top_ten = results.json().get("data").get("after")
         if top_ten is not None:
-            after = top_ten 
+            after = top_ten
             recurse(subreddit, hot_list)
         all_titles = results.json().get("data").get("children")
         for title_ in all_titles:

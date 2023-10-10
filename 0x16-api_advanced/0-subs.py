@@ -1,13 +1,13 @@
 #!/usr/bin/python3
 """
-Module gets number of subreddit subscribers through Reddit API 
+Module gets number of subreddit subscribers through Reddit API
 """
 from requests import get
 
 
 def number_of_subscribers(subreddit):
     """
-    function returns total number of subscribers 
+    function returns total number of subscribers
     """
 
     if subreddit is None or not isinstance(subreddit, str):

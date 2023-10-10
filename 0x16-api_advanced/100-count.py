@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Module determines occurence of word in Reddit's hot articles 
+Module determines occurence of word in Reddit's hot articles
 """
 import requests
 

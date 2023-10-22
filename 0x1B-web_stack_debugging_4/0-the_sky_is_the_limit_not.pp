@@ -1,6 +1,11 @@
 # Increasing number of worker processes to eliminate failed requests
 exec { 'Higher limit':
-  #command => "sed -i 's/worker_processes 4;/worker_processes 7;/g' /etc/nginx/nginx.conf; sudo service nginx restart",
-  command => 'sed -i "s/15/4096/" /etc/default/nginx',
-  path    => ['/usr/local/bin:/bin/']
+  command  => 'sed -i "s/ULIMIT=\"-n 15\"/ULIMIT=\"-n 2000\"/g" /etc/default/nginx',
+  provider => shell 
+}
+
+exec { 'Restart server':
+  command  => 'service nginx restart',
+  provider => shell,
+  require  => Exec['ulimit'],
 }
